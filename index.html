@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRIMS CAP | Ron Alfred Pereira</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: #d4af37;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .hero {
+            min-height: 520px;
+            background:
+                linear-gradient(#0009, #000b),
+                url("https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=1600&q=85")
+                center/cover;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 70px 10%;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #d4af37;
+            color: #111;
+            padding: 14px 26px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        section {
+            padding: 75px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .cap-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px #00000012;
+            transition: transform 0.3s;
+        }
+
+        .cap-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .cap-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            background: #ddd;
+        }
+
+        .cap-info {
+            padding: 20px;
+        }
+
+        .cap-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .cap-info p {
+            color: #666;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+            color: #8c6b10;
+            background: #fff5d5;
+            padding: 6px 10px;
+            border-radius: 20px;
+            margin-top: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.9;
+        }
+
+        .about-content h3 {
+            margin: 28px 0 10px;
+            color: #8c6b10;
+            font-size: 23px;
+        }
+
+        .owner-name {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        .contact {
+            background: #191919;
+            color: white;
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 15px 0 25px;
+            color: #ddd;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #080808;
+            color: #aaa;
+            padding: 22px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 8px;
+                line-height: 2.2;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero {
+                min-height: 440px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .cap-card img {
+                height: 300px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER AND NAVIGATION -->
+    <header>
+        <div class="logo">BRIMS<span>CAP</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#owner">Owner</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HOME PAGE -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>TOP OFF YOUR <span>STYLE.</span></h1>
+
+            <p>
+                Welcome to Brims Cap — where style meets confidence.
+                Discover caps in different colors and designs that
+                express your personality and complete your look.
+            </p>
+
+            <a href="#gallery" class="btn">EXPLORE OUR CAPS</a>
+        </div>
+    </section>
+
+    <!-- GALLERY PAGE -->
+    <section id="gallery">
+        <h2 class="section-title">OUR CAP COLLECTION</h2>
+
+        <p class="section-description">
+            Nine styles. Different colors. One unique look.
+            Find your favorite cap.
+        </p>
+
+        <div class="gallery">
+
+           <div class="cap-card">
+                <img
+                    src="https://www.bing.com/th/id/OIP.B_ofgUVQkL5xP70qzZJNGgHaE6?w=193&h=135&c=8&rs=1&qlt=90&o=6&pid=ImgAns&rm=2
+                    alt="Classic black cap">
+                <div class="cap-info">
+                    <h3>01. Classic Black</h3>
+                    <p>A timeless black cap for everyday streetwear.</p>
+                    <span class="tag">CLASSIC</span>
+                </div>
+            </div>
+
+            <div class="cap-card">
+                <img
+                    src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=700&q=80"
+                    alt="White minimalist cap">
+                <div class="cap-info">
+                    <h3>02. Pure White</h3>
+                    <p>A clean, minimalist style for a fresh outfit.</p>
+                    <span class="tag">MINIMALIST</span>
+                </div>
+            </div>
+
+            <div class="cap-card">
+                <img
+                    src="https://th.bing.com/th/id/OIP.9fAOwNJzPoTZBW-ZY3F01QHaHa?w=186&h=186&c=7&r=0&o=7&pid=1.7&rm=3
+                    alt="Sporty cap">
+                <div class="cap-info">
+                    <h3>03. Sport Edition</h3>
+                    <p>A sporty look for active days and casual wear.</p>
+                    <span class="tag">SPORT</span>
+                </div>
+            </div>
+
+            <div class="cap-card">
+                <img
+                    src="https://th.bing.com/th/id/OIP.vL2Ds19-OfqsKVWw0UUMSgHaF2?w=233&h=184&c=7&r=0&o=7&pid=1.7&rm=3
+                    alt="Red streetwear cap">
+                <div class="cap-info">
+                    <h3>04. Bold Red</h3>
+                    <p>A standout color for a confident streetwear look.</p>
+                    <span class="tag">STREETWEAR</span>
+                </div>
+            </div>
+
+            <div class="cap-card">
+                <img
+                    src="https://th.bing.com/th/id/OIP.pqJTTHiL5ZIWSf_7zLeJxAHaJX?w=149&h=188&c=7&r=0&o=7&pid=1.7&rm=3
+                    alt="Navy blue cap">
+                <div class="cap-info">
+                    <h3>05. Navy Blue</h3>
+                    <p>A versatile blue cap that matches almost anything.</p>
+                    <span class="tag">EVERYDAY</span>
+                </div>
+            </div>
+
+            <div class="cap-card">
+                <img
+                    src="https://images.unsplash.com/photo-1534215754734-18e55d13e346?auto=format&fit=crop&w=700&q=80&sat=-40"
+                    alt="Earth tone cap">
+                <div class="cap-info">
+                    <h3>06. Earth Tone</h3>
+                    <p>A relaxed, neutral color for a laid-back outfit.</p>
+                    <span class="tag">CASUAL</span>
+                </div>
+            </div>
+
+            <div class="cap-card">
+                <img
+                    src="https://th.bing.com/th/id/OIP.sWBh_dJQa1ltHKYIJespxgHaHa?w=199&h=199&c=7&r=0&o=7&pid=1.7&rm=3
+                    alt="Fashion snapback cap">
+                <div class="cap-info">
+                    <h3>07. Urban Snapback</h3>
+                    <p>A bold street-style design for modern fashion.</p>
+                    <span class="tag">URBAN</span>
+                </div>
+            </div>
+
+            <div class="cap-card">
+                <img
+                    src="https://th.bing.com/th/id/OIP.L0oJNlPjYGKG02xbjRMWWQHaES?w=290&h=180&c=7&r=0&o=7&pid=1.7&rm=3
+                    alt="Premium dark cap">
+                <div class="cap-info">
+                    <h3>08. Premium Dark</h3>
+                    <p>A sleek dark design for a simple, polished look.</p>
+                    <span class="tag">PREMIUM</span>
+                </div>
+            </div>
+
+            <div class="cap-card">
+                <img
+                    src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=700&q=80"
+                    alt="Classic vintage cap">
+                <div class="cap-info">
+                    <h3>09. Vintage Style</h3>
+                    <p>A timeless-inspired look for your personal collection.</p>
+                    <span class="tag">VINTAGE</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT THE STORE -->
+    <section class="about" id="about">
+        <h2 class="section-title">ABOUT BRIMS CAP</h2>
+
+        <div class="about-content">
+            <p>
+                Brims Cap is a cap-store concept built around personal
+                style, comfort, and self-expression. Our collection
+                showcases different cap designs, colors, and looks
+                for people who want to make their outfits stand out.
+            </p>
+
+            <p>
+                From classic everyday caps to sporty and streetwear
+                styles, Brims Cap celebrates the idea that a simple
+                accessory can make a big difference.
+            </p>
+        </div>
+    </section>
+
+    <!-- ABOUT THE OWNER -->
+    <section id="owner">
+        <h2 class="section-title">MEET THE OWNER</h2>
+
+        <div class="about-content">
+            <div class="owner-name">Ron Alfred Pereira</div>
+
+            <p>
+                Hello and welcome! I'm Ron Alfred Pereira, the owner
+                behind the Brims Cap website. My goal is to showcase
+                a collection of cap styles that inspire confidence,
+                creativity, and individuality.
+            </p>
+
+            <p>
+                This website represents my interest in fashion,
+                modern design, and building a recognizable cap brand.
+                Thank you for visiting Brims Cap!
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">GET IN TOUCH</h2>
+
+        <p>
+            Interested in Brims Cap? Contact us to learn more
+            about our collection and future designs.
+        </p>
+
+        <!-- Replace this with your actual contact information -->
+        <a href="mailto:your-email@example.com" class="btn">
+            EMAIL US
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            &copy; 2026 Brims Cap | Created by Ron Alfred Pereira
+        </p>
+        <p>Style your look. Wear your confidence.</p>
+    </footer>
+
+</body>
+</html>
